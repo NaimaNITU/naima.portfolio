@@ -18,6 +18,11 @@ const projects = [
 - Like system with sorting.
 - Firebase Auth, Firestore.
 `,
+    futurePlans: `
+- Add user profile pages.
+- Enable recipe commenting.
+- Develop a mobile app version.
+`,
   },
   {
     title: "Volunteer Connect App",
@@ -34,6 +39,11 @@ const projects = [
 - JWT-secured dashboard and state management.
 - Responsive UI with smooth motion effects.
 `,
+    futurePlans: `
+- Add event notification system.
+- Improve volunteer analytics dashboard.
+- Integrate calendar syncing.
+`,
   },
   {
     title: "JobTrack – Smart Job Portal",
@@ -49,6 +59,11 @@ const projects = [
 - Protected dashboard routes.
 - REST API with Node & MongoDB.
 - Real-time job posting & application.
+`,
+    futurePlans: `
+- Add interview scheduling feature.
+- Improve job recommendation algorithm.
+- Implement resume parsing.
 `,
   },
 ];
@@ -176,18 +191,67 @@ const Projects = () => {
               <p className="mb-4 text-gray-700 dark:text-gray-300">
                 {selectedProject.description}
               </p>
+
+              {/* Technology Stack */}
+              <h4 className="font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                Technology Stack:
+              </h4>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {selectedProject.stack.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="bg-blue-100 dark:bg-blue-700 text-blue-800 dark:text-blue-200 text-xs font-semibold px-3 py-1 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Live & GitHub Links */}
+              <div className="flex gap-2 flex-wrap mb-6">
+                <a
+                  href={selectedProject.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-semibold transition"
+                >
+                  Live Site
+                </a>
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-700 hover:bg-gray-900 text-white px-5 py-2 rounded-lg font-semibold transition"
+                >
+                  GitHub
+                </a>
+              </div>
+
               <h4 className="font-semibold text-blue-600 dark:text-blue-400 mb-2">
                 Challenges:
               </h4>
               <p className="mb-6 text-gray-700 dark:text-gray-300">
                 {selectedProject.challenges}
               </p>
+
               <h4 className="font-semibold text-blue-600 dark:text-blue-400 mb-2">
                 Details:
               </h4>
-              <pre className="whitespace-pre-wrap text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+              <pre className="whitespace-pre-wrap text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-6">
                 {selectedProject.details}
               </pre>
+
+              {/* Potential improvements & future plans */}
+              {selectedProject.futurePlans && (
+                <>
+                  <h4 className="font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                    Potential Improvements & Future Plans:
+                  </h4>
+                  <pre className="whitespace-pre-wrap text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                    {selectedProject.futurePlans}
+                  </pre>
+                </>
+              )}
             </motion.div>
           </motion.div>
         )}
