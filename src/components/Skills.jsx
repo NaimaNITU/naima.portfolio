@@ -36,38 +36,61 @@ const skills = {
   ],
 };
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.3,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 px-4 max-w-5xl mx-auto">
+    <section
+      id="skills"
+      className="min-h-screen flex flex-col justify-center rounded-2xl  px-6 md:px-10 max-w-6xl mx-auto bg-gradient-to-b from-white to-gray-100 dark:from-gray-600 dark:to-gray-800"
+    >
       <motion.h2
-        className="text-3xl font-bold text-center mb-10"
+        className="text-4xl font-bold mb-16 text-center text-primary"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        Skills
+        My Skills
       </motion.h2>
-      <div className="grid md:grid-cols-3 gap-8">
-        {Object.entries(skills).map(([category, skillList]) => (
-          <div key={category}>
-            <h3 className="text-xl font-semibold text-primary mb-4">
-              {category}
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              {skillList.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded shadow hover:shadow-md transition"
-                >
-                  <span className="text-xl text-primary">{skill.icon}</span>
-                  <span>{skill.name}</span>
-                </div>
-              ))}
-            </div>
+
+      {Object.entries(skills).map(([category, skillList], index) => (
+        <motion.div
+          key={category}
+          custom={index}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="mb-14"
+        >
+          <h3 className="text-2xl font-semibold text-primary  mb-6 border-l-4 border-primary pl-3">
+            {category}
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+            {skillList.map((skill) => (
+              <div
+                key={skill.name}
+                className="flex items-center gap-3 bg-white dark:bg-gray-800 px-5 py-4 rounded-2xl shadow-md hover:shadow-xl transition-transform hover:scale-105 duration-300"
+              >
+                <span className="text-2xl text-primary">{skill.icon}</span>
+                <span className="text-base font-medium">{skill.name}</span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </motion.div>
+      ))}
     </section>
   );
 };
