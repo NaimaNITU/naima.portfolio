@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaDribbble } from "react-icons/fa";
+import myImg from "../assets/profile.jpg";
 
 const Hero = () => {
   return (
@@ -9,7 +10,7 @@ const Hero = () => {
       className="pt-24 pb-16 px-4 max-w-5xl mx-auto text-center"
     >
       <motion.img
-        src="https://i.ibb.co/ZG0mftq/profile.png"
+        src={myImg}
         alt="Naima Uddin"
         className="w-32 h-32 mx-auto rounded-full border-4 border-primary mb-4"
         initial={{ scale: 0 }}
@@ -36,23 +37,16 @@ const Hero = () => {
           <FaLinkedin className="text-2xl text-primary hover:scale-110 transition-transform" />
         </a>
         <a
-          href="https://github.com/naimauddin23"
+          href="https://github.com/NaimaNITU"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaGithub className="text-2xl text-primary hover:scale-110 transition-transform" />
         </a>
-        <a
-          href="https://dribbble.com/naimauddin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaDribbble className="text-2xl text-primary hover:scale-110 transition-transform" />
-        </a>
       </div>
       <div className="mt-6">
         <a
-          href="/resume.pdf"
+          href="/public/resume.pdf"
           className="bg-primary text-white px-6 py-2 rounded hover:bg-green-700 transition"
           download
         >
