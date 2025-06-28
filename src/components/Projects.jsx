@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const projects = [
   {
     title: "Recipe Sharing App",
-    image: "/public/recipeBook.png",
+    image: "/recipeBook.png",
     description:
       "Users can share, edit, and delete recipes with real-time updates. Top recipes are sorted by likes of users.",
     stack: ["React", "Firebase", "Tailwind"],
@@ -26,7 +26,7 @@ const projects = [
   },
   {
     title: "Volunteer Connect App",
-    image: "/public/volunteerConnect.png",
+    image: "/volunteerConnect.png",
     description:
       "Responsive platform to manage and join volunteer events seamlessly.",
     stack: ["React", "Tailwind", "Framer Motion"],
@@ -47,7 +47,7 @@ const projects = [
   },
   {
     title: "JobTrack – Smart Job Portal",
-    image: "/public/jobPortal.png",
+    image: "/jobPortal.png",
     description:
       "Portal for job seekers and companies to post and apply for jobs.",
     stack: ["React", "Tailwind", "Node.js", "MongoDB"],
