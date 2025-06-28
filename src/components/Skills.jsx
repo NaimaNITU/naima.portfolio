@@ -53,10 +53,10 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen flex flex-col justify-center rounded-2xl  px-6 md:px-10 max-w-6xl mx-auto bg-gradient-to-b from-white to-gray-100 dark:from-gray-600 dark:to-gray-800"
+      className="min-h-screen flex flex-col justify-center rounded-2xl  px-6 md:px-10 max-w-6xl mx-auto  dark:from-gray-600 dark:to-gray-800"
     >
       <motion.h2
-        className="text-4xl font-bold mb-16 text-center text-primary"
+        className="text-4xl font-bold mb-10 text-center text-primary"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
